@@ -1,0 +1,84 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Article Extractor</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    
+    h2 {
+      margin-top: 0;
+      color: #333;
+      font-size: 18px;
+    }
+    
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    button:hover {
+      background-color: #3367d6;
+    }
+    
+    .shortcut {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    
+    .kbd {
+      display: inline-block;
+      padding: 3px 6px;
+      background-color: #e8e8e8;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      display: none;
+    }
+    
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+  <h2>Trích xuất nội dung bài báo</h2>
+  <button id="extractBtn">Trích xuất ngay</button>
+  
+  <div class="shortcut">
+    Phím tắt: <span class="kbd">Ctrl</span> + <span class="kbd">Q</span>
+  </div>
+  
+  <div id="status" class="status"></div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

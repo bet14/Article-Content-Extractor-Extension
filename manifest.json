@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "Copy Article",
+  "version": "2.0",
+  "description": "Trích xuất tiêu đề và nội dung bài báo từ các trang tin tức",
+  "permissions": ["activeTab", "storage", "scripting", "clipboardWrite"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "commands": {
+    "extract-content": {
+      "suggested_key": {
+        "default": "Ctrl+Q"
+      },
+      "description": "Trích "
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "exclude_matches": [
+        "https://iboard.ssi.com.vn/*",
+        "https://www.facebook.com/*",
+        "https://mail.google.com/*",
+	      "https://monica.im/*",
+        "https://youtube.com/*",
+        "https://console.cloud.google.com/*",
+        "https://www.youtube.com/*",
+        "https://m.youtube.com/*",
+        "https://www.console.cloud.google.com/*",
+         "https://docs.google.com/*",
+        "https://www.docs.google.com/*",
+        "https://grok.com/*",
+        "https://www.grok.com/*",
+        "https://aistudio.google.com/*",
+        "https://fireant.vn/*",
+        "https://1lib.sk/*",
+        "https://music.youtube.com/*"
+
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
